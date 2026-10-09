@@ -1,0 +1,19 @@
+{
+ "model": "Qwen/Qwen3-14B",
+ "method": "omniquant",
+ "bits_per_weight": 3,
+ "compressed": null,
+ "rtn_bits": 3,
+ "rtn_group": 0,
+ "calib": null,
+ "wikitext2_ppl": 12.291216850280762,
+ "ppl_windows": 146,
+ "zero_shot": {
+  "arc_easy": 0.8169191919191919,
+  "arc_challenge": 0.5460750853242321,
+  "hellaswag": 0.559151563433579,
+  "winogrande": 0.7056037884767167,
+  "boolq": 0.8336391437308869
+ },
+ "zero_shot_mean": 0.6922777545769213
+}

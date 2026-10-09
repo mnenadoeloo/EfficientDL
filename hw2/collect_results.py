@@ -4,7 +4,8 @@ import json
 from collections import defaultdict
 
 TASKS = ["arc_easy", "arc_challenge", "hellaswag", "winogrande", "boolq"]
-ORDER = {"fp16": 0, "seedlm": 1, "rtn": 2, "awq": 3}
+ORDER = {"fp16": 0, "seedlm": 1, "rtn": 2, "awq": 3, "omniquant": 4, "quip": 5}
+NAMES = {"awq": "AWQ", "omniquant": "OmniQuant", "quip": "QuIP#", "rtn": "RTN"}
 
 by_model = defaultdict(list)
 for f in sorted(glob.glob("results/*.json")):
@@ -17,7 +18,9 @@ def label(r):
         return "BF16"
     if r["method"] == "seedlm":
         return f"SeedLM W{round(r['bits_per_weight'])}"
-    return f"{r['method'].upper()} W{r['rtn_bits']} " + (f"g{r['rtn_group']}" if r["rtn_group"] else "на канал")
+    if r["method"] == "quip":
+        return f"QuIP# W{r['rtn_bits']}"
+    return f"{NAMES[r['method']]} W{r['rtn_bits']} " + (f"g{r['rtn_group']}" if r["rtn_group"] else "на канал")
 
 
 def size_key(m): # 0.6B < 8B < 14B

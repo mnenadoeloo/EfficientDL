@@ -1,0 +1,19 @@
+{
+ "model": "Qwen/Qwen3-14B",
+ "method": "quip",
+ "bits_per_weight": 3.0,
+ "compressed": null,
+ "rtn_bits": 3,
+ "rtn_group": null,
+ "calib": "pile",
+ "wikitext2_ppl": 9.220221519470215,
+ "ppl_windows": 146,
+ "zero_shot": {
+  "arc_easy": 0.8316498316498316,
+  "arc_challenge": 0.5691126279863481,
+  "hellaswag": 0.5854411471818363,
+  "winogrande": 0.734017363851618,
+  "boolq": 0.8932721712538226
+ },
+ "zero_shot_mean": 0.7226986283846913
+}
