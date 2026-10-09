@@ -30,8 +30,7 @@ python collect_results.py # results/results.md
 ```
 
 Всё сразу для нескольких моделей: `./run_all.sh Qwen/Qwen3-8B Qwen/Qwen3-14B`.
-## Дополнительные baseline'ы и замер скорости (написаны без GPU, ни разу не запускались)
-
+## Дополнительные baseline'ы и замер скорости
 ```bash
 python test_baselines.py # smoke-тесты на крошечных моделях: OmniQuant, QuIP#, ядра matvec
 
